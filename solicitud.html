@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
+    <title>ControlVet - Tu Veterinaria de Confianza</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="ControlVet Logo" class="logo">
+        <h1>ControlVet</h1>
+        <p>Tu veterinaria de control de confianza</p>
+        <nav>
+            <ul>
+                <li><a href="#" id="infoTab">Información</a></li>
+                <li><a href="solicitud.html" id="appointmentTab  class="active">Agendamiento de Citas</a></li>
+                <li><a href="mensaje.html" id="servicesTab">Servicios</a></li>
+                <li><a href="#" id="testimonialTab">Testimonios</a></li>
+                <li><a href="#" id="contactTab">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+<!-- formulario -->
+
+<center><h1>Registro de Citas </h1></center>
+    <form action="registro.php" name="" method="POST">
+      <table border="0" align="center">
+    <tr>
+          <td>
+            Cedula de Ciudadania:
+          </td>
+          <td>
+            <label for="cedula"></label>
+            <input type="text" name="cedula" id="cedula" required  />
+          </td>
+    </tr>
+    <tr>
+          <td>
+            Nombre del Cliente:
+          </td>
+          <td>
+            <label for="usuario"></label>
+            <input type="text" name="usuario" id="usuario" required  />
+          </td>
+    </tr>
+    <tr>
+          <td>
+            Fecha de Cita:
+          </td>
+          <td>
+            <label for="fecha"></label>
+            <input type="date" name="fecha" id="fecha"  required />
+          </td>
+    </tr>
+    <tr>
+      <td>
+          Hora de Cita:
+      </td>
+          <td>
+            <label for="hora"></label>
+            <input type="text" name="hora" id="hora"  required />
+    </tr>
+      <td>
+            Motivo de Cita:
+      </td>
+    <td>
+            <label for="motivo"></label>
+            <input type="text" name="motivo" id="motivo"  required />
+          </td>
+        </tr>
+
+        <!--<tr>
+          <td>
+            Repetir contraseña:
+          </td>
+          <td>
+            <label for="rep_pasword"></label>
+            <input type="pasword" name="rep_contraseña" id="rep_pasword"  required />
+          </td>
+        </tr>-->
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center" class="w-100 btn btn-lg btn-primary">
+            <input
+              
+              type="submit" 
+              name="enviar"
+              id="enviar"
+              value="Guardar Cita"
+            />
+          </td>
+          <td align="center"class="w-100 btn btn-lg btn-primary" >
+            <input  type="reset" name="borrar" id="borrar" value="Borrar" />
+          </td>
+        </tr>
+      </table>
+    </form>
+    
+   
+    </a> 
+
+</div></div></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Sección de Agendamiento de Citas -->
+        <section id="appointmentSection" style="display: none;">
+            <h2>Agendar Cita para tu Mascota</h2>
+            <form id="appointmentForm">
+                <div>
+                    <label for="ownerName">Nombre del Propietario:</label>
+                    <input type="text" id="ownerName" name="ownerName" required>
+                </div>
+                <div>
+                    <label for="petName">Nombre de la Mascota:</label>
+                    <input type="text" id="petName" name="petName" required>
+                </div>
+                <div>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <fieldset>
+                    <legend>Selecciona los servicios que deseas:</legend>
+                    <div class="service-item">
+                        <input type="checkbox" id="service1" name="service" value="Castración">
+                        <label for="service1">Castración</label>
+                    </div>
+                    <div class="service-item">
+                        <input type="checkbox" id="service2" name="service" value="Purga">
+                        <label for="service2">Purga</label>
+                    </div>
+                    <div class="service-item">
+                        <input type="checkbox" id="service3" name="service" value="Limpieza">
+                        <label for="service3">Limpieza (Baño y peluqueada)</label>
+                    </div>
+                    <div class="service-item">
+                        <input type="checkbox" id="service4" name="service" value="Vacunación">
+                        <label for="service4">Vacunación</label>
+                    </div>
+                    <div class="service-item">
+                        <input type="checkbox" id="service5" name="service" value="Desparasitación">
+                        <label for="service5">Desparasitación</label>
+                    </div>
+                </fieldset>
+                <div>
+                    <label for="date">Fecha:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div>
+                    <label for="time">Hora:</label>
+                    <input type="hidden" id="time" name="time">
+                    <div id="timeButtons"></div>
+                </div>
+                <div>
+                    <label for="comments">Comentarios adicionales:</label>
+                    <textarea id="comments" name="comments" rows="4"></textarea>
+                </div>
+                <div id="appointmentSummary" style="display:none;">
+                    <h3>Resumen de la Cita</h3>
+                    <p id="summaryText"></p>
+                </div>
+                <div id="confirmationContainer"></div>
+                <button type="submit">Agendar Cita</button>
+            </form>
+            <div id="cancellationPolicy">
+                <h3>Política de Cancelaciones</h3>
+                <p>Entendemos que a veces surgen imprevistos. Por favor, ten en cuenta nuestra política de cancelaciones:</p>
+                <ul>
+                    <li>Las cancelaciones con más de 24 horas de anticipación no tienen costo.</li>
+                    <li>Las cancelaciones con menos de 24 horas de anticipación pueden estar sujetas a un cargo del 50% del valor de la consulta.</li>
+                    <li>No presentarse a una cita sin aviso previo puede resultar en un cargo del 100% del valor de la consulta.</li>
+                </ul>
+                <p>Para cancelar o reprogramar tu cita, por favor llámanos al (123) 456-7890 o envíanos un correo a citas@controlvet.com.</p>
+            </div>
+        </section>
+
+        <!-- Sección de Servicios -->
+        <section id="servicesSection" style="display: none;">
+            <h2>Servicios de ControlVet</h2>
+            <p>En ControlVet, nos enorgullece ofrecer una amplia gama de servicios veterinarios de alta calidad para garantizar la salud y el bienestar de tus mascotas:</p>
+            <ul>
+                <li><strong>Castración:</strong> Procedimiento quirúrgico seguro y eficaz para el control de la población animal.</li>
+                <li><strong>Purga:</strong> Tratamientos desparasitarios internos para mantener a tu mascota libre de parásitos.</li>
+                <li><strong>Limpieza (Baño y peluqueada):</strong> Servicios de higiene y estética para que tu mascota luzca y se sienta genial.</li>
+                <li><strong>Vacunación:</strong> Programas de vacunación personalizados para prevenir enfermedades comunes en perros y gatos.</li>
+                <li><strong>Desparasitación:</strong> Tratamientos contra parásitos externos e internos para mantener a tu mascota saludable.</li>
+            </ul>
+            <p>Nuestro equipo de veterinarios altamente capacitados está comprometido con proporcionar el mejor cuidado posible para tu compañero peludo. ¡Agenda una cita hoy mismo!</p>
+        </section>
+
+        <!-- Sección de Testimonios -->
+        <section id="testimonialSection" style="display: none;">
+            <h2>Testimonios de Clientes</h2>
+            <div id="testimonialCarousel">
+                <!-- Los testimonios se generarán dinámicamente con JavaScript -->
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contactSection" style="display: none;">
+            <h2>Contacto</h2>
+            <div class="contact-info">
+                <p><strong>Dirección:</strong> Calle Principal 123, Ciudad</p>
+                <p><strong>Teléfono:</strong> (123) 456-7890</p>
+                <p><strong>Email:</strong> <a href="mailto:info@controlvet.com">info@controlvet.com</a></p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31633.12270406713!2d-72.5140481!3d7.8939091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6645a1a3a54827%3A0xa13c9a5c9dbd28f1!2sC%C3%BAcuta%2C%20Norte%20de%20Santander%2C%20Colombia!5e0!3m2!1ses-419!2sco!4v1696869448965!5m2!1ses-419!2sco" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 ControlVet. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.2/main.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="funcion.js"></script>
+</body>
+</html>

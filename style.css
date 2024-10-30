@@ -1,0 +1,295 @@
+/* Variables para colores y fuentes */
+:root {
+    --primary-color: #6B8E9E; /* Azul verdoso pastel */
+    --primary-hover: #5A7D8C;
+    --secondary-color: #9B8DB7; /* Morado suave */
+    --background-color: #F8F8FF; /* Blanco fantasma */
+    --text-color: #333333;
+    --accent-color: #E6E6FA; /* Lavanda muy claro */
+    --border-radius: 8px;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado y navegación */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 5px 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: var(--primary-hover);
+}
+
+/* Secciones */
+section {
+    padding: 30px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+#infoSection, #servicesSection { background-color: var(--accent-color); }
+
+/* Títulos y texto */
+h2, h3 {
+    color: var(--primary-color);
+}
+
+/* Formularios */
+form {
+    display: grid;
+    gap: 20px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px rgba(155, 141, 183, 0.5);
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8A7CA6;
+}
+
+/* Servicios */
+fieldset {
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: var(--primary-color);
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.service-item input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: var(--secondary-color);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Botones de tiempo */
+#timeButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.time-button {
+    padding: 10px 15px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.time-button:hover, .time-button.selected {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Confirmación */
+.confirmation-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--accent-color);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.confirmation-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.confirmation-container p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #8A7CA6;
+}
+
+/* Carrusel de testimonios */
+#testimonialCarousel {
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+}
+
+.testimonial {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.testimonial.active {
+    opacity: 1;
+}
+
+/* Mapa */
+#map {
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: var(--border-radius);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    section {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
